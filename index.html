@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal IPS SMP Kelas VIII</title>
+  <style>
+    :root {
+      --primary-color: #1b5e20;
+      --primary-light: #4c8c4a;
+      --primary-dark: #003300;
+      --accent-color: #ffc107;
+      --bg-color: #f1f8e9;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --correct-color: #d4edda;
+      --correct-text: #155724;
+      --wrong-color: #f8d7da;
+      --wrong-text: #721c24;
+      --border-radius: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 5%;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header img {
+      width: 70px;
+      height: auto;
+      background: #fff;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .header .title h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .header .title p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .student-info {
+      background: var(--card-bg);
+      padding: 15px 25px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+      text-align: center;
+      border-left: 5px solid var(--accent-color);
+    }
+
+    .student-info h1 {
+      margin: 0 0 10px 0;
+      color: var(--primary-color);
+      font-size: 24px;
+    }
+
+    .student-info .details {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Question Cards */
+    .question-card {
+      background: var(--card-bg);
+      margin-bottom: 20px;
+      padding: 25px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .question-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    }
+
+    .question-text {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    /* Options Styling */
+    .options-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-label:hover {
+      border-color: var(--primary-light);
+      background-color: #f9fff9;
+    }
+
+    /* Custom Radio Hide */
+    .option-label input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #aaa;
+      border-radius: 50%;
+      margin-right: 15px;
+      outline: none;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .option-label input[type="radio"]:checked {
+      border-color: var(--primary-color);
+    }
+
+    .option-label input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: var(--primary-color);
+      border-radius: 50%;
+    }
+
+    /* Feedback Styles (Applied via JS) */
+    .option-label.correct {
+      background-color: var(--correct-color) !important;
+      border-color: var(--correct-text) !important;
+      color: var(--correct-text);
+    }
+    
+    .option-label.wrong {
+      background-color: var(--wrong-color) !important;
+      border-color: var(--wrong-text) !important;
+      color: var(--wrong-text);
+    }
+
+    .option-label.dimmed {
+      opacity: 0.6;
+    }
+
+    /* Buttons */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 14px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(27, 94, 32, 0.3);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      display: none; /* Hidden by default */
+    }
+
+    .btn-secondary:hover {
+      background: #f1f8e9;
+    }
+
+    /* Result Section */
+    #result-section {
+      display: none;
+      background: white;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease;
+      border-top: 6px solid var(--accent-color);
+    }
+
+    .score-display {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin: 10px 0;
+    }
+
+    .grade-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+      .header img {
+        margin-bottom: 10px;
+      }
+      .question-card {
+        padding: 15px;
+      }
+      .btn {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <!-- Menggunakan URL dari deskripsi prompt agar logo muncul -->
+    <img src="https://z-cdn-media.chatglm.cn/files/56e90a19-085a-42bd-b085-dc0377e4104a.png?auth_key=1870629051-f1a20879f4e24714b010d99fedb74bbe-0-52bc6c2bfa5d1611e30f06b91dbf46d3" alt="Logo Sekolah">
+    <div class="title">
+      <h2>SMPK Frateran Ndao-Ende</h2>
+      <p>Latihan Soal IPS Kelas VIII</p>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <!-- Student Info -->
+    <div class="student-info">
+      <h1>Latihan Soal IPS</h1>
+      <div class="details">
+        Nama: <strong>Lambertus Adam Lowo Ngole</strong><br>
+        Kelas: <strong>VIII</strong>
+      </div>
+    </div>
+
+    <!-- Quiz Form -->
+    <form id="quiz">
+      
+      <div class="question-card" id="q1">
+        <div class="question-text">1. Ilmu yang mempelajari hubungan antara manusia dan lingkungannya disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q1" value="0"> Sosiologi</label>
+          <label class="option-label"><input type="radio" name="q1" value="1"> Geografi</label>
+          <label class="option-label"><input type="radio" name="q1" value="0"> Ekonomi</label>
+          <label class="option-label"><input type="radio" name="q1" value="0"> Antropologi</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q2">
+        <div class="question-text">2. Kegiatan manusia untuk memenuhi kebutuhan hidup disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q2" value="1"> Kegiatan ekonomi</label>
+          <label class="option-label"><input type="radio" name="q2" value="0"> Kegiatan sosial</label>
+          <label class="option-label"><input type="radio" name="q2" value="0"> Kegiatan budaya</label>
+          <label class="option-label"><input type="radio" name="q2" value="0"> Kegiatan politik</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q3">
+        <div class="question-text">3. Berikut yang termasuk kebutuhan primer adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q3" value="1"> Makanan</label>
+          <label class="option-label"><input type="radio" name="q3" value="0"> Televisi</label>
+          <label class="option-label"><input type="radio" name="q3" value="0"> Perhiasan</label>
+          <label class="option-label"><input type="radio" name="q3" value="0"> Sepeda motor</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q4">
+        <div class="question-text">4. Kegiatan menyalurkan barang dari produsen ke konsumen disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q4" value="0"> Produksi</label>
+          <label class="option-label"><input type="radio" name="q4" value="1"> Distribusi</label>
+          <label class="option-label"><input type="radio" name="q4" value="0"> Konsumsi</label>
+          <label class="option-label"><input type="radio" name="q4" value="0"> Investasi</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q5">
+        <div class="question-text">5. Pelaku ekonomi yang menghasilkan barang dan jasa disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q5" value="1"> Produsen</label>
+          <label class="option-label"><input type="radio" name="q5" value="0"> Konsumen</label>
+          <label class="option-label"><input type="radio" name="q5" value="0"> Distributor</label>
+          <label class="option-label"><input type="radio" name="q5" value="0"> Pemerintah</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q6">
+        <div class="question-text">6. Interaksi sosial akan terjadi apabila terdapat …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q6" value="1"> Kontak dan komunikasi</label>
+          <label class="option-label"><input type="radio" name="q6" value="0"> Kepentingan pribadi</label>
+          <label class="option-label"><input type="radio" name="q6" value="0"> Perbedaan pendapat</label>
+          <label class="option-label"><input type="radio" name="q6" value="0"> Konflik</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q7">
+        <div class="question-text">7. Norma yang bersumber dari hati nurani manusia disebut norma …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q7" value="0"> Agama</label>
+          <label class="option-label"><input type="radio" name="q7" value="1"> Kesusilaan</label>
+          <label class="option-label"><input type="radio" name="q7" value="0"> Hukum</label>
+          <label class="option-label"><input type="radio" name="q7" value="0"> Kesopanan</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q8">
+        <div class="question-text">8. Berikut ini yang merupakan contoh mobilitas sosial vertikal naik adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q8" value="1"> Karyawan menjadi manajer</label>
+          <label class="option-label"><input type="radio" name="q8" value="0"> Guru pindah sekolah</label>
+          <label class="option-label"><input type="radio" name="q8" value="0"> Petani pindah desa</label>
+          <label class="option-label"><input type="radio" name="q8" value="0"> Siswa pindah kelas</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q9">
+        <div class="question-text">9. Kegiatan membeli barang untuk digunakan disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q9" value="0"> Produksi</label>
+          <label class="option-label"><input type="radio" name="q9" value="0"> Distribusi</label>
+          <label class="option-label"><input type="radio" name="q9" value="1"> Konsumsi</label>
+          <label class="option-label"><input type="radio" name="q9" value="0"> Transaksi</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q10">
+        <div class="question-text">10. Pasar yang mempertemukan penjual dan pembeli tanpa tatap muka disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q10" value="1"> Pasar abstrak</label>
+          <label class="option-label"><input type="radio" name="q10" value="0"> Pasar tradisional</label>
+          <label class="option-label"><input type="radio" name="q10" value="0"> Pasar konkret</label>
+          <label class="option-label"><input type="radio" name="q10" value="0"> Pasar lokal</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q11">
+        <div class="question-text">11. Keanekaragaman budaya di Indonesia terjadi karena …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q11" value="1"> Perbedaan suku dan lingkungan</label>
+          <label class="option-label"><input type="radio" name="q11" value="0"> Persamaan bahasa</label>
+          <label class="option-label"><input type="radio" name="q11" value="0"> Kesamaan adat</label>
+          <label class="option-label"><input type="radio" name="q11" value="0"> Satu agama</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q12">
+        <div class="question-text">12. Lembaga sosial yang berfungsi mengatur hubungan manusia dalam keluarga adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q12" value="1"> Lembaga keluarga</label>
+          <label class="option-label"><input type="radio" name="q12" value="0"> Lembaga ekonomi</label>
+          <label class="option-label"><input type="radio" name="q12" value="0"> Lembaga pendidikan</label>
+          <label class="option-label"><input type="radio" name="q12" value="0"> Lembaga politik</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q13">
+        <div class="question-text">13. Berikut yang merupakan contoh globalisasi di bidang komunikasi adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q13" value="1"> Internet</label>
+          <label class="option-label"><input type="radio" name="q13" value="0"> Sawah</label>
+          <label class="option-label"><input type="radio" name="q13" value="0"> Bendungan</label>
+          <label class="option-label"><input type="radio" name="q13" value="0"> Jalan raya</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q14">
+        <div class="question-text">14. Sikap yang tepat dalam menghadapi keberagaman adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q14" value="1"> Toleransi</label>
+          <label class="option-label"><input type="radio" name="q14" value="0"> Diskriminasi</label>
+          <label class="option-label"><input type="radio" name="q14" value="0"> Egois</label>
+          <label class="option-label"><input type="radio" name="q14" value="0"> Fanatisme</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q15">
+        <div class="question-text">15. Kegiatan ekspor bertujuan untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q15" value="1"> Menjual barang ke luar negeri</label>
+          <label class="option-label"><input type="radio" name="q15" value="0"> Membeli barang dari luar negeri</label>
+          <label class="option-label"><input type="radio" name="q15" value="0"> Menyimpan barang</label>
+          <label class="option-label"><input type="radio" name="q15" value="0"> Menghabiskan barang</label>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button type="button" class="btn btn-primary" id="submitBtn" onclick="checkAnswers()">Lihat Nilai</button>
+        <button type="button" class="btn btn-secondary" id="resetBtn" onclick="resetQuiz()">Ulangi Latihan</button>
+      </div>
+
+    </form>
+
+    <!-- Result Section -->
+    <div id="result-section">
+      <h3>Hasil Latihan Soal</h3>
+      <div class="grade-badge" id="gradeBadge">-</div>
+      <div class="score-display"><span id="scoreVal">0</span> / 100</div>
+      <p id="feedbackText">Terima kasih telah mengerjakan latihan soal.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      const total = 15;
+      const form = document.getElementById('quiz');
+      const questionCards = document.querySelectorAll('.question-card');
+      let answeredCount = 0;
+
+      // Loop through each question card
+      questionCards.forEach(card => {
+        // Disable all inputs in this card to prevent changing after submit
+        const inputs = card.querySelectorAll('input[type=radio]');
+        inputs.forEach(input => input.disabled = true);
+
+        // Find selected input
+        const selected = card.querySelector('input[type=radio]:checked');
+        const labels = card.querySelectorAll('.option-label');
+
+        if (selected) {
+          answeredCount++;
+          // Check value
+          if (parseInt(selected.value) === 1) {
+            score++;
+            // Highlight correct choice
+            selected.parentElement.classList.add('correct');
+          } else {
+            // Highlight wrong choice
+            selected.parentElement.classList.add('wrong');
+            // Dim other wrong choices
+            labels.forEach(lbl => {
+              if(lbl !== selected.parentElement) lbl.classList.add('dimmed');
+            });
+            // Find and highlight the correct one
+            const correctInput = card.querySelector('input[type=radio][value="1"]');
+            if(correctInput) correctInput.parentElement.classList.add('correct');
+          }
+        } else {
+          // No answer selected: just highlight the correct one and dim the rest
+          labels.forEach(lbl => lbl.classList.add('dimmed'));
+          const correctInput = card.querySelector('input[type=radio][value="1"]');
+          if(correctInput) correctInput.parentElement.classList.remove('dimmed');
+          if(correctInput) correctInput.parentElement.classList.add('correct');
+        }
+      });
+
+      // Calculate final score
+      const finalScore = Math.round((score * 100) / total);
+      
+      // Determine Grade and Color
+      let grade = '';
+      let gradeColor = '';
+      let feedback = '';
+
+      if (finalScore >= 90) {
+        grade = 'A (Sangat Baik)';
+        gradeColor = '#28a745';
+        feedback = 'Luar biasa! Pemahaman kamu sangat baik.';
+      } else if (finalScore >= 80) {
+        grade = 'B (Baik)';
+        gradeColor = '#17a2b8';
+        feedback = 'Bagus! Terus pertahankan belajarnya.';
+      } else if (finalScore >= 70) {
+        grade = 'C (Cukup)';
+        gradeColor = '#ffc107';
+        feedback = 'Cukup baik, tapi perlu belajar lagi materi yang salah.';
+      } else {
+        grade = 'D (Kurang)';
+        gradeColor = '#dc3545';
+        feedback = 'Jangan menyerah, ayo pelajari lagi materi IPS dan coba lagi!';
+      }
+
+      // Update UI
+      document.getElementById('scoreVal').textContent = finalScore;
+      const gradeBadge = document.getElementById('gradeBadge');
+      gradeBadge.textContent = grade;
+      gradeBadge.style.backgroundColor = gradeColor;
+      document.getElementById('feedbackText').textContent = feedback;
+
+      // Show result section
+      const resultSection = document.getElementById('result-section');
+      resultSection.style.display = 'block';
+      resultSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Toggle Buttons
+      document.getElementById('submitBtn').style.display = 'none';
+      document.getElementById('resetBtn').style.display = 'block';
+    }
+
+    function resetQuiz() {
+      const form = document.getElementById('quiz');
+      form.reset();
+
+      // Remove all styling classes
+      const labels = document.querySelectorAll('.option-label');
+      labels.forEach(label => {
+        label.classList.remove('correct', 'wrong', 'dimmed');
+      });
+
+      // Enable inputs
+      const inputs = document.querySelectorAll('input[type=radio]');
+      inputs.forEach(input => input.disabled = false);
+
+      // Hide result, show submit button
+      document.getElementById('result-section').style.display = 'none';
+      document.getElementById('submitBtn').style.display = 'inline-block';
+      document.getElementById('resetBtn').style.display = 'none';
+      
+      // Scroll back to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
