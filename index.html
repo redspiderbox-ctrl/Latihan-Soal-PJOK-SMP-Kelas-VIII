@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latihan Soal IPS SMP Kelas VIII</title>
+  <title>Latihan Soal PJOK SMP Kelas VIII</title>
   <style>
     :root {
       --primary-color: #1b5e20;
       --primary-light: #4c8c4a;
+      --primary-dark: #003300;
       --accent-color: #ffc107;
       --bg-color: #f1f8e9;
       --card-bg: #ffffff;
@@ -26,7 +27,7 @@
     /* --- HEADER & LOGO --- */
     .header {
       display: flex; align-items: center; gap: 20px; padding: 20px 5%;
-      background: linear-gradient(135deg, #003300, #1b5e20); color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-color)); color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     /* Logo Container dengan Background Putih */
@@ -88,16 +89,15 @@
     .btn {
       padding: 12px 30px; font-size: 16px; font-weight: bold; border: none; border-radius: 30px;
       cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-flex; align-items: center; gap: 10px;
-      text-decoration: none; /* Supaya tombol WA tidak ada garis bawah */
+      text-decoration: none;
     }
     .btn-primary { background: var(--primary-color); color: white; }
     .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
     
-    /* Tombol WhatsApp */
     .btn-whatsapp { 
       background: var(--wa-color); 
       color: white; 
-      display: none; /* Sembunyikan dulu */
+      display: none; 
     }
     .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); }
 
@@ -124,172 +124,523 @@
     </div>
     <div class="title">
       <h2>SMPK Frateran Ndao-Ende</h2>
-      <p>Latihan Soal IPS Kelas VIII</p>
+      <p>Latihan Soal PJOK Kelas VIII</p>
     </div>
   </div>
 
   <div class="container">
     <div class="student-info">
-      <h1>Latihan Soal IPS</h1>
+      <h1>Latihan Soal PJOK</h1>
       <p>Nama: <strong>Lambertus Adam Lowo Ngole</strong> | Kelas: <strong>VIII</strong></p>
     </div>
 
     <form id="quiz">
-      <!-- 15 Soal -->
+      <!-- SOAL 1-10 -->
       <div class="question-card" id="q1">
-        <div class="question-text">1. Ilmu yang mempelajari hubungan antara manusia dan lingkungannya disebut …</div>
+        <div class="question-text">1. Tujuan utama pendidikan jasmani adalah …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q1" value="0"> Sosiologi</label>
-          <label class="option-label"><input type="radio" name="q1" value="1"> Geografi</label>
-          <label class="option-label"><input type="radio" name="q1" value="0"> Ekonomi</label>
-          <label class="option-label"><input type="radio" name="q1" value="0"> Antropologi</label>
+          <label class="option-label"><input type="radio" name="q1" value="A"> Kesehatan dan kebugaran</label>
+          <label class="option-label"><input type="radio" name="q1" value="B"> Prestasi semata</label>
+          <label class="option-label"><input type="radio" name="q1" value="C"> Hiburan</label>
+          <label class="option-label"><input type="radio" name="q1" value="D"> Persaingan</label>
         </div>
       </div>
 
       <div class="question-card" id="q2">
-        <div class="question-text">2. Kegiatan manusia untuk memenuhi kebutuhan hidup disebut …</div>
+        <div class="question-text">2. Permainan sepak bola dimainkan oleh …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q2" value="1"> Kegiatan ekonomi</label>
-          <label class="option-label"><input type="radio" name="q2" value="0"> Kegiatan sosial</label>
-          <label class="option-label"><input type="radio" name="q2" value="0"> Kegiatan budaya</label>
-          <label class="option-label"><input type="radio" name="q2" value="0"> Kegiatan politik</label>
+          <label class="option-label"><input type="radio" name="q2" value="A"> 7 orang</label>
+          <label class="option-label"><input type="radio" name="q2" value="B"> 9 orang</label>
+          <label class="option-label"><input type="radio" name="q2" value="C"> 11 orang</label>
+          <label class="option-label"><input type="radio" name="q2" value="D"> 12 orang</label>
         </div>
       </div>
 
       <div class="question-card" id="q3">
-        <div class="question-text">3. Berikut yang termasuk kebutuhan primer adalah …</div>
+        <div class="question-text">3. Induk organisasi sepak bola dunia adalah …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q3" value="1"> Makanan</label>
-          <label class="option-label"><input type="radio" name="q3" value="0"> Televisi</label>
-          <label class="option-label"><input type="radio" name="q3" value="0"> Perhiasan</label>
-          <label class="option-label"><input type="radio" name="q3" value="0"> Sepeda motor</label>
+          <label class="option-label"><input type="radio" name="q3" value="A"> PSSI</label>
+          <label class="option-label"><input type="radio" name="q3" value="B"> AFC</label>
+          <label class="option-label"><input type="radio" name="q3" value="C"> FIFA</label>
+          <label class="option-label"><input type="radio" name="q3" value="D"> IOC</label>
         </div>
       </div>
 
       <div class="question-card" id="q4">
-        <div class="question-text">4. Kegiatan menyalurkan barang dari produsen ke konsumen disebut …</div>
+        <div class="question-text">4. Teknik dasar menendang bola dengan kaki bagian dalam disebut …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q4" value="0"> Produksi</label>
-          <label class="option-label"><input type="radio" name="q4" value="1"> Distribusi</label>
-          <label class="option-label"><input type="radio" name="q4" value="0"> Konsumsi</label>
-          <label class="option-label"><input type="radio" name="q4" value="0"> Investasi</label>
+          <label class="option-label"><input type="radio" name="q4" value="A"> Shooting</label>
+          <label class="option-label"><input type="radio" name="q4" value="B"> Passing</label>
+          <label class="option-label"><input type="radio" name="q4" value="C"> Dribbling</label>
+          <label class="option-label"><input type="radio" name="q4" value="D"> Heading</label>
         </div>
       </div>
 
       <div class="question-card" id="q5">
-        <div class="question-text">5. Pelaku ekonomi yang menghasilkan barang dan jasa disebut …</div>
+        <div class="question-text">5. Jumlah pemain bola voli dalam satu tim adalah …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q5" value="1"> Produsen</label>
-          <label class="option-label"><input type="radio" name="q5" value="0"> Konsumen</label>
-          <label class="option-label"><input type="radio" name="q5" value="0"> Distributor</label>
-          <label class="option-label"><input type="radio" name="q5" value="0"> Pemerintah</label>
+          <label class="option-label"><input type="radio" name="q5" value="A"> 4 orang</label>
+          <label class="option-label"><input type="radio" name="q5" value="B"> 5 orang</label>
+          <label class="option-label"><input type="radio" name="q5" value="C"> 6 orang</label>
+          <label class="option-label"><input type="radio" name="q5" value="D"> 7 orang</label>
         </div>
       </div>
 
       <div class="question-card" id="q6">
-        <div class="question-text">6. Interaksi sosial akan terjadi apabila terdapat …</div>
+        <div class="question-text">6. Servis dalam bola voli dilakukan dari …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q6" value="1"> Kontak dan komunikasi</label>
-          <label class="option-label"><input type="radio" name="q6" value="0"> Kepentingan pribadi</label>
-          <label class="option-label"><input type="radio" name="q6" value="0"> Perbedaan pendapat</label>
-          <label class="option-label"><input type="radio" name="q6" value="0"> Konflik</label>
+          <label class="option-label"><input type="radio" name="q6" value="A"> Tengah lapangan</label>
+          <label class="option-label"><input type="radio" name="q6" value="B"> Depan net</label>
+          <label class="option-label"><input type="radio" name="q6" value="C"> Belakang garis lapangan</label>
+          <label class="option-label"><input type="radio" name="q6" value="D"> Samping lapangan</label>
         </div>
       </div>
 
       <div class="question-card" id="q7">
-        <div class="question-text">7. Norma yang bersumber dari hati nurani manusia disebut norma …</div>
+        <div class="question-text">7. Teknik memukul bola dalam bulu tangkis disebut …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q7" value="0"> Agama</label>
-          <label class="option-label"><input type="radio" name="q7" value="1"> Kesusilaan</label>
-          <label class="option-label"><input type="radio" name="q7" value="0"> Hukum</label>
-          <label class="option-label"><input type="radio" name="q7" value="0"> Kesopanan</label>
+          <label class="option-label"><input type="radio" name="q7" value="A"> Dribble</label>
+          <label class="option-label"><input type="radio" name="q7" value="B"> Smash</label>
+          <label class="option-label"><input type="radio" name="q7" value="C"> Passing</label>
+          <label class="option-label"><input type="radio" name="q7" value="D"> Tackle</label>
         </div>
       </div>
 
       <div class="question-card" id="q8">
-        <div class="question-text">8. Berikut ini yang merupakan contoh mobilitas sosial vertikal naik adalah …</div>
+        <div class="question-text">8. Induk organisasi bulu tangkis dunia adalah …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q8" value="1"> Karyawan menjadi manajer</label>
-          <label class="option-label"><input type="radio" name="q8" value="0"> Guru pindah sekolah</label>
-          <label class="option-label"><input type="radio" name="q8" value="0"> Petani pindah desa</label>
-          <label class="option-label"><input type="radio" name="q8" value="0"> Siswa pindah kelas</label>
+          <label class="option-label"><input type="radio" name="q8" value="A"> PBSI</label>
+          <label class="option-label"><input type="radio" name="q8" value="B"> FIFA</label>
+          <label class="option-label"><input type="radio" name="q8" value="C"> BWF</label>
+          <label class="option-label"><input type="radio" name="q8" value="D"> IOC</label>
         </div>
       </div>
 
       <div class="question-card" id="q9">
-        <div class="question-text">9. Kegiatan membeli barang untuk digunakan disebut …</div>
+        <div class="question-text">9. Senam lantai dilakukan di atas …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q9" value="0"> Produksi</label>
-          <label class="option-label"><input type="radio" name="q9" value="0"> Distribusi</label>
-          <label class="option-label"><input type="radio" name="q9" value="1"> Konsumsi</label>
-          <label class="option-label"><input type="radio" name="q9" value="0"> Transaksi</label>
+          <label class="option-label"><input type="radio" name="q9" value="A"> Lapangan</label>
+          <label class="option-label"><input type="radio" name="q9" value="B"> Matras</label>
+          <label class="option-label"><input type="radio" name="q9" value="C"> Rumput</label>
+          <label class="option-label"><input type="radio" name="q9" value="D"> Aspal</label>
         </div>
       </div>
 
       <div class="question-card" id="q10">
-        <div class="question-text">10. Pasar yang mempertemukan penjual dan pembeli tanpa tatap muka disebut …</div>
+        <div class="question-text">10. Sikap awal guling depan adalah …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q10" value="1"> Pasar abstrak</label>
-          <label class="option-label"><input type="radio" name="q10" value="0"> Pasar tradisional</label>
-          <label class="option-label"><input type="radio" name="q10" value="0"> Pasar konkret</label>
-          <label class="option-label"><input type="radio" name="q10" value="0"> Pasar lokal</label>
+          <label class="option-label"><input type="radio" name="q10" value="A"> Berdiri tegak</label>
+          <label class="option-label"><input type="radio" name="q10" value="B"> Jongkok</label>
+          <label class="option-label"><input type="radio" name="q10" value="C"> Duduk</label>
+          <label class="option-label"><input type="radio" name="q10" value="D"> Tidur</label>
         </div>
       </div>
 
+      <!-- SOAL 11-50 (Dikonversi dari Loop menjadi Statis) -->
       <div class="question-card" id="q11">
-        <div class="question-text">11. Keanekaragaman budaya di Indonesia terjadi karena …</div>
+        <div class="question-text">11. Atletik adalah cabang olahraga yang meliputi …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q11" value="1"> Perbedaan suku dan lingkungan</label>
-          <label class="option-label"><input type="radio" name="q11" value="0"> Persamaan bahasa</label>
-          <label class="option-label"><input type="radio" name="q11" value="0"> Kesamaan adat</label>
-          <label class="option-label"><input type="radio" name="q11" value="0"> Satu agama</label>
+          <label class="option-label"><input type="radio" name="q11" value="A"> Lari lompat lempar</label>
+          <label class="option-label"><input type="radio" name="q11" value="B"> Bola dan net</label>
+          <label class="option-label"><input type="radio" name="q11" value="C"> Air</label>
+          <label class="option-label"><input type="radio" name="q11" value="D"> Alat berat</label>
         </div>
       </div>
 
       <div class="question-card" id="q12">
-        <div class="question-text">12. Lembaga sosial yang berfungsi mengatur hubungan manusia dalam keluarga adalah …</div>
+        <div class="question-text">12. Lari jarak pendek disebut …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q12" value="1"> Lembaga keluarga</label>
-          <label class="option-label"><input type="radio" name="q12" value="0"> Lembaga ekonomi</label>
-          <label class="option-label"><input type="radio" name="q12" value="0"> Lembaga pendidikan</label>
-          <label class="option-label"><input type="radio" name="q12" value="0"> Lembaga politik</label>
+          <label class="option-label"><input type="radio" name="q12" value="A"> Sprint</label>
+          <label class="option-label"><input type="radio" name="q12" value="B"> Maraton</label>
+          <label class="option-label"><input type="radio" name="q12" value="C"> Estafet</label>
+          <label class="option-label"><input type="radio" name="q12" value="D"> Jogging</label>
         </div>
       </div>
 
       <div class="question-card" id="q13">
-        <div class="question-text">13. Berikut yang merupakan contoh globalisasi di bidang komunikasi adalah …</div>
+        <div class="question-text">13. Lari jarak jauh disebut …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q13" value="1"> Internet</label>
-          <label class="option-label"><input type="radio" name="q13" value="0"> Sawah</label>
-          <label class="option-label"><input type="radio" name="q13" value="0"> Bendungan</label>
-          <label class="option-label"><input type="radio" name="q13" value="0"> Jalan raya</label>
+          <label class="option-label"><input type="radio" name="q13" value="A"> Maraton</label>
+          <label class="option-label"><input type="radio" name="q13" value="B"> Sprint</label>
+          <label class="option-label"><input type="radio" name="q13" value="C"> Lari cepat</label>
+          <label class="option-label"><input type="radio" name="q13" value="D"> Lari estafet</label>
         </div>
       </div>
 
       <div class="question-card" id="q14">
-        <div class="question-text">14. Sikap yang tepat dalam menghadapi keberagaman adalah …</div>
+        <div class="question-text">14. Lompat jauh diawali dengan …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q14" value="1"> Toleransi</label>
-          <label class="option-label"><input type="radio" name="q14" value="0"> Diskriminasi</label>
-          <label class="option-label"><input type="radio" name="q14" value="0"> Egois</label>
-          <label class="option-label"><input type="radio" name="q14" value="0"> Fanatisme</label>
+          <label class="option-label"><input type="radio" name="q14" value="A"> Awalan</label>
+          <label class="option-label"><input type="radio" name="q14" value="B"> Tolakan</label>
+          <label class="option-label"><input type="radio" name="q14" value="C"> Melayang</label>
+          <label class="option-label"><input type="radio" name="q14" value="D"> Mendarat</label>
         </div>
       </div>
 
       <div class="question-card" id="q15">
-        <div class="question-text">15. Kegiatan ekspor bertujuan untuk …</div>
+        <div class="question-text">15. Tolak peluru menggunakan …</div>
         <div class="options-grid">
-          <label class="option-label"><input type="radio" name="q15" value="1"> Menjual barang ke luar negeri</label>
-          <label class="option-label"><input type="radio" name="q15" value="0"> Membeli barang dari luar negeri</label>
-          <label class="option-label"><input type="radio" name="q15" value="0"> Menyimpan barang</label>
-          <label class="option-label"><input type="radio" name="q15" value="0"> Menghabiskan barang</label>
+          <label class="option-label"><input type="radio" name="q15" value="A"> Tangan</label>
+          <label class="option-label"><input type="radio" name="q15" value="B"> Kaki</label>
+          <label class="option-label"><input type="radio" name="q15" value="C"> Kepala</label>
+          <label class="option-label"><input type="radio" name="q15" value="D"> Bahu</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q16">
+        <div class="question-text">16. Renang gaya dada disebut juga …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q16" value="A"> Gaya katak</label>
+          <label class="option-label"><input type="radio" name="q16" value="B"> Gaya bebas</label>
+          <label class="option-label"><input type="radio" name="q16" value="C"> Gaya punggung</label>
+          <label class="option-label"><input type="radio" name="q16" value="D"> Gaya kupu-kupu</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q17">
+        <div class="question-text">17. Alat bantu keselamatan renang adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q17" value="A"> Pelampung</label>
+          <label class="option-label"><input type="radio" name="q17" value="B"> Kacamata</label>
+          <label class="option-label"><input type="radio" name="q17" value="C"> Topi</label>
+          <label class="option-label"><input type="radio" name="q17" value="D"> Baju</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q18">
+        <div class="question-text">18. Olahraga renang dilakukan di …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q18" value="A"> Kolam</label>
+          <label class="option-label"><input type="radio" name="q18" value="B"> Sungai</label>
+          <label class="option-label"><input type="radio" name="q18" value="C"> Danau</label>
+          <label class="option-label"><input type="radio" name="q18" value="D"> Laut</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q19">
+        <div class="question-text">19. Pemanasan bertujuan untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q19" value="A"> Mencegah cedera</label>
+          <label class="option-label"><input type="radio" name="q19" value="B"> Melelahkan</label>
+          <label class="option-label"><input type="radio" name="q19" value="C"> Menggemukkan</label>
+          <label class="option-label"><input type="radio" name="q19" value="D"> Memperlambat</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q20">
+        <div class="question-text">20. Pendinginan dilakukan setelah olahraga untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q20" value="A"> Mengembalikan kondisi tubuh</label>
+          <label class="option-label"><input type="radio" name="q20" value="B"> Melelahkan</label>
+          <label class="option-label"><input type="radio" name="q20" value="C"> Menyebabkan cedera</label>
+          <label class="option-label"><input type="radio" name="q20" value="D"> Memanaskan</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q21">
+        <div class="question-text">21. Kebugaran jasmani berhubungan dengan …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q21" value="A"> Kesehatan tubuh</label>
+          <label class="option-label"><input type="radio" name="q21" value="B"> Prestasi</label>
+          <label class="option-label"><input type="radio" name="q21" value="C"> Popularitas</label>
+          <label class="option-label"><input type="radio" name="q21" value="D"> Hadiah</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q22">
+        <div class="question-text">22. Daya tahan disebut juga …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q22" value="A"> Endurance</label>
+          <label class="option-label"><input type="radio" name="q22" value="B"> Strength</label>
+          <label class="option-label"><input type="radio" name="q22" value="C"> Speed</label>
+          <label class="option-label"><input type="radio" name="q22" value="D"> Power</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q23">
+        <div class="question-text">23. Latihan push-up melatih otot …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q23" value="A"> Lengan</label>
+          <label class="option-label"><input type="radio" name="q23" value="B"> Perut</label>
+          <label class="option-label"><input type="radio" name="q23" value="C"> Kaki</label>
+          <label class="option-label"><input type="radio" name="q23" value="D"> Punggung</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q24">
+        <div class="question-text">24. Latihan sit-up melatih otot …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q24" value="A"> Perut</label>
+          <label class="option-label"><input type="radio" name="q24" value="B"> Lengan</label>
+          <label class="option-label"><input type="radio" name="q24" value="C"> Kaki</label>
+          <label class="option-label"><input type="radio" name="q24" value="D"> Leher</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q25">
+        <div class="question-text">25. Pola hidup sehat meliputi …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q25" value="A"> Makan bergizi</label>
+          <label class="option-label"><input type="radio" name="q25" value="B"> Tidur cukup</label>
+          <label class="option-label"><input type="radio" name="q25" value="C"> Olahraga</label>
+          <label class="option-label"><input type="radio" name="q25" value="D"> Semua benar</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q26">
+        <div class="question-text">26. Makanan bergizi seimbang mengandung …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q26" value="A"> Karbohidrat protein lemak</label>
+          <label class="option-label"><input type="radio" name="q26" value="B"> Air saja</label>
+          <label class="option-label"><input type="radio" name="q26" value="C"> Vitamin saja</label>
+          <label class="option-label"><input type="radio" name="q26" value="D"> Lemak saja</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q27">
+        <div class="question-text">27. Vitamin berfungsi untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q27" value="A"> Mengatur metabolisme</label>
+          <label class="option-label"><input type="radio" name="q27" value="B"> Sumber energi</label>
+          <label class="option-label"><input type="radio" name="q27" value="C"> Membangun otot</label>
+          <label class="option-label"><input type="radio" name="q27" value="D"> Cadangan energi</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q28">
+        <div class="question-text">28. Penyakit akibat kurang olahraga disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q28" value="A"> Hipokinetik</label>
+          <label class="option-label"><input type="radio" name="q28" value="B"> Infeksi</label>
+          <label class="option-label"><input type="radio" name="q28" value="C"> Alergi</label>
+          <label class="option-label"><input type="radio" name="q28" value="D"> Genetik</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q29">
+        <div class="question-text">29. Contoh olahraga kebugaran adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q29" value="A"> Senam</label>
+          <label class="option-label"><input type="radio" name="q29" value="B"> Catur</label>
+          <label class="option-label"><input type="radio" name="q29" value="C"> Memancing</label>
+          <label class="option-label"><input type="radio" name="q29" value="D"> Melukis</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q30">
+        <div class="question-text">30. Rokok berbahaya bagi …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q30" value="A"> Paru-paru</label>
+          <label class="option-label"><input type="radio" name="q30" value="B"> Kulit</label>
+          <label class="option-label"><input type="radio" name="q30" value="C"> Rambut</label>
+          <label class="option-label"><input type="radio" name="q30" value="D"> Kuku</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q31">
+        <div class="question-text">31. Narkoba berdampak buruk pada …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q31" value="A"> Otak dan tubuh</label>
+          <label class="option-label"><input type="radio" name="q31" value="B"> Kulit</label>
+          <label class="option-label"><input type="radio" name="q31" value="C"> Rambut</label>
+          <label class="option-label"><input type="radio" name="q31" value="D"> Kuku</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q32">
+        <div class="question-text">32. Sikap sportif berarti …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q32" value="A"> Jujur dan taat aturan</label>
+          <label class="option-label"><input type="radio" name="q32" value="B"> Curang</label>
+          <label class="option-label"><input type="radio" name="q32" value="C"> Menang sendiri</label>
+          <label class="option-label"><input type="radio" name="q32" value="D"> Licik</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q33">
+        <div class="question-text">33. Fair play artinya …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q33" value="A"> Bermain jujur</label>
+          <label class="option-label"><input type="radio" name="q33" value="B"> Menang cepat</label>
+          <label class="option-label"><input type="radio" name="q33" value="C"> Bermain keras</label>
+          <label class="option-label"><input type="radio" name="q33" value="D"> Bertanding bebas</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q34">
+        <div class="question-text">34. Wasit bertugas untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q34" value="A"> Memimpin pertandingan</label>
+          <label class="option-label"><input type="radio" name="q34" value="B"> Bermain</label>
+          <label class="option-label"><input type="radio" name="q34" value="C"> Menonton</label>
+          <label class="option-label"><input type="radio" name="q34" value="D"> Melatih</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q35">
+        <div class="question-text">35. P3K singkatan dari …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q35" value="A"> Pertolongan Pertama Pada Kecelakaan</label>
+          <label class="option-label"><input type="radio" name="q35" value="B"> Penanganan Penyakit</label>
+          <label class="option-label"><input type="radio" name="q35" value="C"> Perawatan Pasien</label>
+          <label class="option-label"><input type="radio" name="q35" value="D"> Pengobatan Pertama</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q36">
+        <div class="question-text">36. Luka ringan sebaiknya …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q36" value="A"> Dibersihkan</label>
+          <label class="option-label"><input type="radio" name="q36" value="B"> Dibiarkan</label>
+          <label class="option-label"><input type="radio" name="q36" value="C"> Ditutup kotor</label>
+          <label class="option-label"><input type="radio" name="q36" value="D"> Digaruk</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q37">
+        <div class="question-text">37. Pertolongan pertama bertujuan untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q37" value="A"> Mencegah kondisi memburuk</label>
+          <label class="option-label"><input type="radio" name="q37" value="B"> Menyembuhkan total</label>
+          <label class="option-label"><input type="radio" name="q37" value="C"> Mengganti obat</label>
+          <label class="option-label"><input type="radio" name="q37" value="D"> Menghilangkan rasa sakit</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q38">
+        <div class="question-text">38. Denyut nadi meningkat saat …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q38" value="A"> Berolahraga</label>
+          <label class="option-label"><input type="radio" name="q38" value="B"> Istirahat</label>
+          <label class="option-label"><input type="radio" name="q38" value="C"> Tidur</label>
+          <label class="option-label"><input type="radio" name="q38" value="D"> Makan</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q39">
+        <div class="question-text">39. Olahraga teratur dapat mencegah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q39" value="A"> Penyakit</label>
+          <label class="option-label"><input type="radio" name="q39" value="B"> Stres</label>
+          <label class="option-label"><input type="radio" name="q39" value="C"> Cedera</label>
+          <label class="option-label"><input type="radio" name="q39" value="D"> Kesehatan</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q40">
+        <div class="question-text">40. Istirahat cukup penting untuk …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q40" value="A"> Pemulihan tubuh</label>
+          <label class="option-label"><input type="radio" name="q40" value="B"> Prestasi</label>
+          <label class="option-label"><input type="radio" name="q40" value="C"> Kelelahan</label>
+          <label class="option-label"><input type="radio" name="q40" value="D"> Cedera</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q41">
+        <div class="question-text">41. Kebersihan diri disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q41" value="A"> Personal hygiene</label>
+          <label class="option-label"><input type="radio" name="q41" value="B"> Higienis</label>
+          <label class="option-label"><input type="radio" name="q41" value="C"> Steril</label>
+          <label class="option-label"><input type="radio" name="q41" value="D"> Sanitasi</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q42">
+        <div class="question-text">42. Cuci tangan sebaiknya menggunakan …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q42" value="A"> Sabun</label>
+          <label class="option-label"><input type="radio" name="q42" value="B"> Air kotor</label>
+          <label class="option-label"><input type="radio" name="q42" value="C"> Air saja</label>
+          <label class="option-label"><input type="radio" name="q42" value="D"> Tisu</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q43">
+        <div class="question-text">43. Air minum yang baik adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q43" value="A"> Air bersih</label>
+          <label class="option-label"><input type="radio" name="q43" value="B"> Air keruh</label>
+          <label class="option-label"><input type="radio" name="q43" value="C"> Air bau</label>
+          <label class="option-label"><input type="radio" name="q43" value="D"> Air berwarna</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q44">
+        <div class="question-text">44. Cedera otot disebut …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q44" value="A"> Strain</label>
+          <label class="option-label"><input type="radio" name="q44" value="B"> Fraktur</label>
+          <label class="option-label"><input type="radio" name="q44" value="C"> Dislokasi</label>
+          <label class="option-label"><input type="radio" name="q44" value="D"> Memar</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q45">
+        <div class="question-text">45. Contoh olahraga beregu adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q45" value="A"> Sepak bola</label>
+          <label class="option-label"><input type="radio" name="q45" value="B"> Lari</label>
+          <label class="option-label"><input type="radio" name="q45" value="C"> Renang</label>
+          <label class="option-label"><input type="radio" name="q45" value="D"> Senam</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q46">
+        <div class="question-text">46. Contoh olahraga perorangan adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q46" value="A"> Tenis meja</label>
+          <label class="option-label"><input type="radio" name="q46" value="B"> Sepak bola</label>
+          <label class="option-label"><input type="radio" name="q46" value="C"> Bola voli</label>
+          <label class="option-label"><input type="radio" name="q46" value="D"> Basket</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q47">
+        <div class="question-text">47. Peralatan keselamatan bersepeda adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q47" value="A"> Helm</label>
+          <label class="option-label"><input type="radio" name="q47" value="B"> Topi</label>
+          <label class="option-label"><input type="radio" name="q47" value="C"> Kacamata</label>
+          <label class="option-label"><input type="radio" name="q47" value="D"> Sarung tangan</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q48">
+        <div class="question-text">48. Sikap saat berlari adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q48" value="A"> Condong ke depan</label>
+          <label class="option-label"><input type="radio" name="q48" value="B"> Membungkuk</label>
+          <label class="option-label"><input type="radio" name="q48" value="C"> Tegak kaku</label>
+          <label class="option-label"><input type="radio" name="q48" value="D"> Miring</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q49">
+        <div class="question-text">49. Tujuan senam irama adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q49" value="A"> Keseimbangan dan keindahan</label>
+          <label class="option-label"><input type="radio" name="q49" value="B"> Kekuatan</label>
+          <label class="option-label"><input type="radio" name="q49" value="C"> Kecepatan</label>
+          <label class="option-label"><input type="radio" name="q49" value="D"> Daya tahan</label>
+        </div>
+      </div>
+
+      <div class="question-card" id="q50">
+        <div class="question-text">50. Manfaat utama PJOK bagi siswa adalah …</div>
+        <div class="options-grid">
+          <label class="option-label"><input type="radio" name="q50" value="A"> Menjaga kesehatan</label>
+          <label class="option-label"><input type="radio" name="q50" value="B"> Mengisi waktu</label>
+          <label class="option-label"><input type="radio" name="q50" value="C"> Hiburan</label>
+          <label class="option-label"><input type="radio" name="q50" value="D"> Persaingan</label>
         </div>
       </div>
 
       <div class="action-buttons">
         <button type="button" class="btn btn-primary" id="submitBtn" onclick="checkAnswers()">Lihat Nilai</button>
         
-        <!-- Tombol WhatsApp (Awalnya disembunyikan) -->
+        <!-- Tombol WhatsApp -->
         <a href="#" target="_blank" id="waBtn" class="btn btn-whatsapp">
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           Kirim Hasil ke WhatsApp
@@ -301,7 +652,7 @@
 
     <!-- Hasil di Web -->
     <div id="result-section">
-      <h3>Hasil Latihan Soal</h3>
+      <h3>Hasil Latihan Soal PJOK</h3>
       <div class="grade-badge" id="gradeBadge">-</div>
       <div class="score-display"><span id="scoreVal">0</span> / 100</div>
       <p id="feedbackText">Terima kasih telah mengerjakan latihan soal.</p>
@@ -311,22 +662,35 @@
   <script>
     function checkAnswers() {
       let score = 0;
-      const total = 15;
+      const total = 50;
       const form = document.getElementById('quiz');
       const questionCards = document.querySelectorAll('.question-card');
-      let answeredCount = 0;
+      
+      // Kunci Jawaban (Sesuai input user)
+      const kunci = {
+        q1:"A", q2:"C", q3:"C", q4:"B", q5:"C",
+        q6:"C", q7:"B", q8:"C", q9:"B", q10:"B",
+        q11:"A", q12:"A", q13:"A", q14:"A", q15:"A",
+        q16:"A", q17:"A", q18:"A", q19:"A", q20:"A",
+        q21:"A", q22:"A", q23:"A", q24:"A", q25:"D",
+        q26:"A", q27:"A", q28:"A", q29:"A", q30:"A",
+        q31:"A", q32:"A", q33:"A", q34:"A", q35:"A",
+        q36:"A", q37:"A", q38:"A", q39:"A", q40:"A",
+        q41:"A", q42:"A", q43:"A", q44:"A", q45:"A",
+        q46:"A", q47:"A", q48:"A", q49:"A", q50:"A"
+      };
 
-      questionCards.forEach(card => {
+      questionCards.forEach((card, index) => {
+        const qNum = index + 1;
         const inputs = card.querySelectorAll('input[type=radio]');
-        inputs.forEach(input => input.disabled = true); // Kunci jawaban
+        inputs.forEach(input => input.disabled = true);
 
         const selected = card.querySelector('input[type=radio]:checked');
         const labels = card.querySelectorAll('.option-label');
-        const correctInput = card.querySelector('input[type=radio][value="1"]');
+        const correctInput = card.querySelector(`input[type=radio][value="${kunci['q'+qNum]}"]`);
 
         if (selected) {
-          answeredCount++;
-          if (parseInt(selected.value) === 1) {
+          if (selected.value === kunci['q'+qNum]) {
             score++;
             selected.parentElement.classList.add('correct');
           } else {
@@ -345,7 +709,7 @@
         }
       });
 
-      // Hitung Nilai
+      // Hitung Nilai (Skala 100)
       const finalScore = Math.round((score * 100) / total);
       document.getElementById('scoreVal').textContent = finalScore;
       
@@ -355,13 +719,13 @@
       let feedback = '';
 
       if (finalScore >= 90) {
-        gradeText = 'A (Sangat Baik)'; gradeColor = '#28a745'; feedback = 'Luar biasa! Pertahankan prestasimu.';
+        gradeText = 'A (Sangat Baik)'; gradeColor = '#28a745'; feedback = 'Hebat! Tubuh dan semangatmu sangat prima.';
       } else if (finalScore >= 80) {
-        gradeText = 'B (Baik)'; gradeColor = '#17a2b8'; feedback = 'Bagus sekali! Terus belajar.';
+        gradeText = 'B (Baik)'; gradeColor = '#17a2b8'; feedback = 'Bagus! Terus jaga kebugaran dan sportif.';
       } else if (finalScore >= 70) {
-        gradeText = 'C (Cukup)'; gradeColor = '#ffc107'; feedback = 'Cukup baik, tingkatkan lagi belajarnya.';
+        gradeText = 'C (Cukup)'; gradeColor = '#ffc107'; feedback = 'Cukup baik, tingkatkan lagi frekuensi olahraga.';
       } else {
-        gradeText = 'D (Kurang)'; gradeColor = '#dc3545'; feedback = 'Jangan menyerah, ayo belajar lebih giat lagi!';
+        gradeText = 'D (Kurang)'; gradeColor = '#dc3545'; feedback = 'Jangan menyerah, ayo lebih aktif bergerak dan berolahraga.';
       }
 
       const gradeBadge = document.getElementById('gradeBadge');
@@ -374,20 +738,18 @@
       const kelasSiswa = "VIII";
       const tanggal = new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-      // Format Pesan WhatsApp
-      let pesan = `*LAPORAN HASIL LATIHAN IPS*%0A%0A`;
+      let pesan = `*LAPORAN HASIL LATIHAN PJOK*%0A%0A`;
       pesan += `👤 Nama Siswa: ${namaSiswa}%0A`;
       pesan += `🏫 Kelas: ${kelasSiswa}%0A`;
       pesan += `📅 Tanggal: ${tanggal}%0A`;
       pesan += `--------------------------------%0A`;
-      pesan += `📊 *Nilai Akhir: ${finalScore}*%0A`;
+      pesan += `🏃‍♂️ *Nilai Akhir: ${finalScore}*%0A`;
       pesan += `🏆 Predikat: ${gradeText}%0A`;
       pesan += `--------------------------------%0A`;
       pesan += `${feedback}%0A%0A`;
       pesan += `Mohon diperiksa, terima kasih.`;
 
       // Update Link Tombol WhatsApp
-      // Jika ingin mengirim ke nomor spesifik guru, ganti bagian kosong setelah 'wa.me/' dengan nomor (contoh: 62812345678)
       document.getElementById('waBtn').href = `https://wa.me/?text=${pesan}`;
 
       // Tampilkan UI
@@ -395,7 +757,7 @@
       document.getElementById('result-section').scrollIntoView({ behavior: 'smooth' });
       
       document.getElementById('submitBtn').style.display = 'none';
-      document.getElementById('waBtn').style.display = 'inline-flex'; // Tampilkan tombol WA
+      document.getElementById('waBtn').style.display = 'inline-flex';
       document.getElementById('resetBtn').style.display = 'inline-block';
     }
 
